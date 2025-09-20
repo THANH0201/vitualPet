@@ -26,15 +26,14 @@ public class PetView extends Application {
 
     @Override
     public void start(Stage primaryStage) {
-        //this.petImage = new Image(Objects.requireNonNull(getClass().getResourceAsStream("/view/dino.png")));
-        this.petImage = new Image(Objects.requireNonNull(getClass().getResourceAsStream("dino.png")));
+        this.petImage = new Image(Objects.requireNonNull(getClass().getResourceAsStream("/images/dino.png")));
         int gridSize = controller.getGridSize();
         int canvasSize = gridSize * CELL_SIZE;
         canvas = new Canvas(canvasSize, canvasSize);
         gc = canvas.getGraphicsContext2D();
 
         //mouse move
-        canvas.setOnMouseClicked(event -> {
+        canvas.setOnMouseMoved(event -> {
             double mouseX = event.getX();
             double mouseY = event.getY();
             controller.movePetToward(mouseX, mouseY);
