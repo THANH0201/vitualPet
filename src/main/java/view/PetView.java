@@ -5,13 +5,10 @@ import javafx.scene.Scene;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.image.Image;
-import javafx.scene.input.KeyCode;
 import javafx.scene.layout.StackPane;
-import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 
 import controller.PetController;
-import utils.Direction;
 
 import java.util.Objects;
 
@@ -29,7 +26,8 @@ public class PetView extends Application {
 
     @Override
     public void start(Stage primaryStage) {
-        this.petImage = new Image(Objects.requireNonNull(getClass().getResourceAsStream("/images/dino.png")));
+        //this.petImage = new Image(Objects.requireNonNull(getClass().getResourceAsStream("/view/dino.png")));
+        this.petImage = new Image(Objects.requireNonNull(getClass().getResourceAsStream("dino.png")));
         int gridSize = controller.getGridSize();
         int canvasSize = gridSize * CELL_SIZE;
         canvas = new Canvas(canvasSize, canvasSize);
